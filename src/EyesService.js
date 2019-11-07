@@ -34,16 +34,29 @@ class EyesService {
 
 
   before(caps) {
-    browser.addCommand('eyesCheckWindow', (title, checkSettings = Target.window().fully()) => {
+    browser.addCommand('eyesCheck', (title, checkSettings = Target.window().fully()) => {
       return this.eyes.check(title, checkSettings);
     });
+
+    browser.addCommand('eyesCheckWindow', (title, checkSettings) => {
+      return this.eyes.check(title, checkSettings);
+    });
+
+    browser.addCommand('eyesGetConfiguration', () => {
+      return this.eyes.getConfiguration();
+    });
+
   }
 
 
   async beforeTest(test) {
     const appName = this.eyes.getConfiguration().getAppName() || test.parent;
     const testName = test.title;
-    const viewport = DEFAULT_VIEWPORT;
+
+    let viewport = DEFAULT_VIEWPORT;
+    if (this.eyes.getConfiguration().getViewportSize()) {
+      viewport = this.eyes.getConfiguration().getViewportSize();
+    }
 
     await global.browser.call(() => this.eyes.open(global.browser, appName, testName, viewport));
   }

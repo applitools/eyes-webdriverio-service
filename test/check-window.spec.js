@@ -9,11 +9,11 @@ describe('EyesServiceTest', () => {
   });
 
   it('checkWindow', () => {
-    browser.eyesCheckWindow('main');
+    browser.eyesCheck('main');
   });
 
   it('checkWindow - no title', () => {
-    browser.eyesCheckWindow();
+    browser.eyesCheck();
   });
 
   it.skip('checkRegion', () => {
