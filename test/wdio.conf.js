@@ -13,7 +13,7 @@ exports.config = {
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
   specs: [
-    './**/*.js'
+    './**/*.spec.js'
   ],
   // Patterns to exclude.
   exclude: [
@@ -143,7 +143,6 @@ exports.config = {
   eyes: {
     batch: 'WebDriverIO eyes-service tests',
     viewportSize: {width: 600, height: 500},
-    appName: 'Test App Name - Eyes Service',
     stitchMode: 'CSS'
   },
   //

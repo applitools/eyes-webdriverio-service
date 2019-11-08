@@ -2,7 +2,7 @@
 
 const {deepEqual} = require('assert');
 
-describe('EyesServiceTest', () => {
+describe('ConfigurationTest', () => {
 
   beforeEach(() => {
     browser.url('http://applitools.github.io/demo/TestPages/FramesTestPage/');

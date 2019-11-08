@@ -2,7 +2,7 @@
 
 const {By, Target} = require('@applitools/eyes.webdriverio');
 
-describe('EyesServiceTest', () => {
+describe('CheckWindowTest', () => {
 
   beforeEach(() => {
     browser.url('http://applitools.github.io/demo/TestPages/FramesTestPage/');
